@@ -11,11 +11,11 @@ module ApplicationHelper
   end
 
   def youtube_embed(str)
-  	output = str.lines.map do |line|
-  		match = nil
-  		match = line.match(/^http.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/)
-  		match ? render(:partial => 'youtube', :locals => { :video => match[1] }) : line
-  	end
-  	output.join
+    output = str.lines.map do |line|
+      match = nil
+      match = line.match(/^http.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/)
+      match ? render(:partial => 'youtube', :locals => { :video => match[1] }) : line
+    end
+    output.join
   end
 end
